@@ -4,7 +4,7 @@ let btn = document.querySelector("#showbutton");
 let password = document.querySelector("#password");
 let action = document.querySelector("#action");
 let amount = document.querySelector("#amount");
-let table = document.querySelector("#table tbody");
+let table = document.querySelector("table tbody");
 let mylogs = [
 {   
     beforeBalance :0,
@@ -60,11 +60,12 @@ function withdraw(){
             afterBalance:balance
         };
         mylogs.push(obj);
+        renderLogs();   
     }
 };
 
 function renderLogs(){
-    
+    table.innerHTML = "";
     mylogs.forEach((log,index)=>{
         table.innerHTML +=
         `<tr>
@@ -76,4 +77,3 @@ function renderLogs(){
         </tr>`;
     })
 }
-renderLogs();   
